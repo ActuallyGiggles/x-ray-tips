@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>X-ray Tips</title>
+</head>
+
+<body>
+    <div id="left-nav-bar">
+        <div class="search-wrapper">
+            <label for="search">Search Exams</label>
+            <input type="search" id="search">
+        </div>
+        <div class="exam-cards" data-exam-cards-container>
+            <template data-exam-template>
+                <div class="card">
+                    <div class="series" data-series></div>
+                    <div class="views" data-views></div>
+                </div>
+            </template>
+        </div>
+    </div>
+</body>
+
+</html>
