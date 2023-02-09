@@ -15,19 +15,18 @@ body {
     margin-left: 25px;
 }
 
-#intro>img {
+#logo {
     height: 150px;
     opacity: .1;
     position: fixed;
-    left: calc(100% - 15%);
-    top: calc(100% - 25%);
+    left: 87%;
+    top: 80%;
 }
 
 #left-bar {
     display: flex;
     flex-direction: row;
-    min-width: 20%;
-    max-width: 20%;
+    width: 20%;
     background-color: rgb(37, 37, 37);
     overflow-y: scroll;
 }
@@ -126,10 +125,14 @@ input {
 #column_one,
 #column_two {
     padding: 50px;
+    overflow-y: scroll;
 }
 
 #page_img {
-    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
     margin-bottom: 25px;
 }
 
@@ -141,4 +144,19 @@ h1 {
 h2 {
     font-size: 1.2rem;
     margin: 0px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+*,
+* {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
