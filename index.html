@@ -11,22 +11,58 @@
 </head>
 
 <body>
-    <div id="nav-bar">
-        <div class="search-wrapper">
-            <label for="search">Search Exams</label>
-            <input type="search" id="search" exam-search>
+    <div id="page_content" class="hide">
+        <img id="page_img" src="">
+        <h1 id="page_exam_name"></h1>
+        <div class="page_section">
+            <h2>Clinical Indications</h2>
+            <ul id="clinical_indications"></ul>
         </div>
-        <div class="exam-cards-container" data-exam-cards-container>
-            <template data-exam-template>
-                <div class="exam_cards" data-exam-cards>
-                    <div class="main_card" data-main-card>
-                        <div class="main_card_name" data-main-card-name></div>
-                        <div class="main_card_views" data-main-card-views></div>
+        <div class="page_section">
+            <h2>Technical Factors</h2>
+            <ul id="technical_factors"></ul>
+        </div>
+        <div class="page_section">
+            <h2>Patient Position</h2>
+            <ul id="patient_position"></ul>
+        </div>
+        <div class="page_section">
+            <h2>Part Position</h2>
+            <ul id="part_position"></ul>
+        </div>
+        <div class="page_section">
+            <h2>CR</h2>
+            <ul id="cr"></ul>
+        </div>
+        <div class="page_section">
+            <h2>Respiration</h2>
+            <ul id="respiration"></ul>
+        </div>
+        <div class="page_section">
+            <h2>Evaluation Criteria</h2>
+            <ul id="evaluation_criteria"></ul>
+        </div>
+    </div>
+
+    <div id="left-bar">
+        <div id="nav-bar">
+            <div class="search-wrapper">
+                <label for="search">Search Exams</label>
+                <input type="search" id="search" exam-search>
+            </div>
+            <div class="exam-cards-container" data-exam-cards-container>
+                <template data-exam-template>
+                    <div class="exam_cards" data-exam-cards>
+                        <div class="main_card" data-main-card>
+                            <div class="main_card_name" data-main-card-name></div>
+                            <div class="main_card_views" data-main-card-views></div>
+                        </div>
+                        <div class="views_cards" data-views-cards></div>
                     </div>
-                    <div class="views_cards" data-views-cards></div>
-                </div>
-            </template>
+                </template>
+            </div>
         </div>
+        <div id="separation"></div>
     </div>
 </body>
 
