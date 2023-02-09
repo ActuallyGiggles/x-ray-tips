@@ -21,18 +21,18 @@ input {
     width: 100%;
 }
 
-.card {
+.series_card {
     border: 1px solid black;
     background-color: white;
     padding: .5rem;
     height: 50px;
 }
 
-.card>.series {
+.series_card>.series_name {
     margin-bottom: .5rem;
 }
 
-.card>.views {
+.series_card>.series_views {
     font-size: .8rem;
     color: #777
 }
