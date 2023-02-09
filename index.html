@@ -16,11 +16,14 @@
             <label for="search">Search Exams</label>
             <input type="search" id="search" exam-search>
         </div>
-        <div class="exam-cards" data-exam-cards-container>
+        <div class="exam-cards-container" data-exam-cards-container>
             <template data-exam-template>
-                <div class="series_card">
-                    <div class="series_name" data-series></div>
-                    <div class="series_views" data-views></div>
+                <div class="exam_cards" data-exam-cards>
+                    <div class="main_card" data-main-card>
+                        <div class="main_card_name" data-main-card-name></div>
+                        <div class="main_card_views" data-main-card-views></div>
+                    </div>
+                    <div class="views_cards" data-views-cards></div>
                 </div>
             </template>
         </div>

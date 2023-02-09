@@ -13,7 +13,7 @@ input {
     font-size: 1rem;
 }
 
-.exam-cards {
+.exam-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: .25rem;
@@ -21,20 +21,32 @@ input {
     width: 100%;
 }
 
-.series_card {
+.main_card {
     border: 1px solid black;
     background-color: white;
     padding: .5rem;
-    height: 50px;
+    min-height: 10px;
+    max-height: 50px;
 }
 
-.series_card>.series_name {
+.main_card>.main_card_views {
+    margin-top: .5rem;
+    font-size: .8rem;
+    color: #777
+}
+
+.views_cards {
     margin-bottom: .5rem;
 }
 
-.series_card>.series_views {
+.view_card {
+    margin-top: .25rem;
+    margin-left: 50%;
+    border-bottom: 1px dashed black;
+    border-left: 1px solid black;
+    background-color: white;
+    padding: .2rem .3rem .2rem;
     font-size: .8rem;
-    color: #777
 }
 
 .hide {
