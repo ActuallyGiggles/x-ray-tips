@@ -65,7 +65,10 @@ document.addEventListener("click", function (event) {
                 populateListFromObject(page_evaluation_criteria, exam["Evaluation Criteria"])
             }
         });
-        document.getElementById("page_content").classList.remove("hide")
+
+        document.getElementById("column_one").classList.remove("hide")
+        document.getElementById("column_two").classList.remove("hide")
+        document.getElementById("intro").classList.add("hide")
     }
 })
 

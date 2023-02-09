@@ -36,7 +36,7 @@
                     "Center CR to T7 (at level of inferior angle of scapula)"
                 ],
                 "Respiration": [
-                    "Expose on second full inspiration."
+                    "Expose on second full inspiration"
                 ],
                 "Evaluation Criteria": {
                     "Anatomy Demonstrated": "Entirety of both lungs from apices to costrophrenic angles. Trachea from T1 and lower. Hilum, heart, great vessels, and bony thorax.",
@@ -60,9 +60,21 @@
                     "Grid": true,
                     "kVp Range": "110-125"
                 },
-                "Patient Position": "Patient erect, left side of chest touching IR, arms raised above head, chin up.",
-                "Part Position": "Positioned in a true lateral. Coronal plane in center of IR. Ensure no rotation of thorax.",
-                "CR": "No angle. Center CR to T7 (at level of inferior angle of scapula).",
+                "Patient Position": [
+                    "Patient erect",
+                    "Left side of chest touching IR",
+                    "Arms raised above head",
+                    "Chin up"
+                ],
+                "Part Position": [
+                    "Positioned in a true lateral",
+                    "Coronal plane in center of IR",
+                    "Ensure no rotation of thorax"
+                ],
+                "CR": [
+                    "No angle",
+                    "Center CR to T7 (at level of inferior angle of scapula)"
+                ],
                 "Respiration": [
                     "Expose on second full inspiration."
                 ],

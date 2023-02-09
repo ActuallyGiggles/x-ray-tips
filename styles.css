@@ -10,12 +10,25 @@ body {
     flex-flow: row;
 }
 
+#intro {
+    font-size: 15px;
+    margin-left: 25px;
+}
+
+#intro>img {
+    height: 150px;
+    opacity: .1;
+    position: fixed;
+    left: calc(100% - 15%);
+    top: calc(100% - 25%);
+}
+
 #left-bar {
     display: flex;
     flex-direction: row;
     min-width: 20%;
     max-width: 20%;
-    background-color: rgb(37, 37, 37)
+    background-color: rgb(37, 37, 37);
 }
 
 #nav-bar {
@@ -24,7 +37,7 @@ body {
 }
 
 #separation {
-    background-color: black;
+    background-color: rgb(37, 37, 37);
     width: 1px;
 }
 
@@ -49,7 +62,7 @@ input {
 }
 
 .main_card {
-    border: 1px solid black;
+    border: 1px solid rgb(19, 19, 19);
     background-color: rgb(31, 31, 31);
     padding: .5rem;
     min-height: 20px;
@@ -74,8 +87,7 @@ input {
 .view_card {
     margin-top: .25rem;
     margin-left: 35%;
-    border-bottom: 1px dashed black;
-    border-left: 1px solid black;
+    border: 1px solid rgb(19, 19, 19);
     background-color: rgb(31, 31, 31);
     padding: .2rem .3rem .2rem;
     font-size: .8rem;
@@ -97,17 +109,18 @@ input {
     justify-content: space-evenly;
 }
 
-#column_two {
-    width: 40%;
+#page_exam_name {
+    margin-bottom: 25px;
 }
 
-.page_info_sections {
-    margin-top: 25px;
+#column_two {
+    width: 40%;
 }
 
 #page_img {
     height: 400px;
     width: auto;
+    margin-bottom: 25px;
 }
 
 h1 {
@@ -119,7 +132,3 @@ h2 {
     font-size: 1.2rem;
     margin: 0px;
 }
-
-/* * {
-    border: 1px solid red;
-} */
