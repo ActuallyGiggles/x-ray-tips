@@ -1,4 +1,4 @@
-const examCardTemplate = document.querySelector("[data-exam-template]"
+const examCardTemplate = document.querySelector("[data-exam-template]")
 const examCardsContainer = document.querySelector("[data-exam-cards-container]")
 const searchInput = document.querySelector("[exam-search]")
 
