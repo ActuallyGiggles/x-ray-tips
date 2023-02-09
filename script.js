@@ -24,17 +24,7 @@ searchInput.addEventListener("input", function (event) {
 })
 
 document.addEventListener("click", function (event) {
-    if (event.target.className == "main_card") {
-        event.target.querySelector("[data-main-card-views]").classList.toggle("hide")
-        for (const view of event.target.parentElement.querySelector("[data-views-cards]").children) {
-            view.classList.toggle("hide")
-        }
-    } else if (event.target.className == "main_card_name" || event.target.className == "main_card_views") {
-        event.target.parentElement.querySelector("[data-main-card-views]").classList.toggle("hide")
-        for (const view of event.target.parentElement.parentElement.querySelector("[data-views-cards]").children) {
-            view.classList.toggle("hide")
-        }
-    } else if (event.target.className == "view_card") {
+    if (event.target.className == "view_card") {
         exams.forEach(exam => {
             if (exam["Name"] == event.target.id) {
                 // Exam Name
@@ -106,23 +96,19 @@ fetch("./exams.json")
             const main_card = exam_cards.querySelector("[data-main-card]")
             main_card.id = series["Part"]
             const seriesElement = main_card.querySelector("[data-main-card-name]")
-            const viewsElement = main_card.querySelector("[data-main-card-views]")
             seriesElement.textContent = series["Part"]
-            viewsElement.textContent = series["Views"]
 
-            const views_cards = exam_cards.querySelector("[data-views-cards]")
-            series["Views"].split(", ").forEach(view => {
+            const viewsElement = main_card.querySelector("[data-main-card-views]")
+            series["Exams"].forEach(exam => {
                 const node = document.createElement("div")
-                const textnode = document.createTextNode(view)
+                const textnode = document.createTextNode(exam["View"])
                 node.appendChild(textnode)
-                node.classList.add("hide")
                 node.classList.add("view_card")
-                node.id = view + " " + series["Part"]
-                views_cards.appendChild(node)
+                node.id = exam["View"] + " " + series["Part"]
+                viewsElement.appendChild(node)
             });
 
             exam_cards.appendChild(main_card)
-            exam_cards.appendChild(views_cards)
 
             examCardsContainer.append(exam_cards)
             return { series: series["Part"], views: series["Views"], element: exam_cards }

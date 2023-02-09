@@ -1,7 +1,6 @@
 [
     {
         "Part": "Chest",
-        "Views": "PA, LAT",
         "Exams": [
             {
                 "View": "PA",
@@ -88,12 +87,146 @@
     },
     {
         "Part": "Hand",
-        "Views": "PA, OBL, LAT",
         "Exams": [
             {
                 "View": "PA",
                 "Part": "Hand",
                 "Name": "PA Hand",
+                "Clinical Indications": [
+                    "Pleural effusion",
+                    "Pneumothorax",
+                    "Atelectasis",
+                    "Signs of infection"
+                ],
+                "Technical Factors": {
+                    "SID": "72",
+                    "IR Size": "14x17",
+                    "IR Orientation": "Landscape or portrait, depending on patient habitus.",
+                    "Grid": true,
+                    "kVp Range": "110-125"
+                },
+                "Patient Position": "Patient erect, anterior chest touching IR, hands on hips and out of the way. Chin up, shoulders rotated forward to clear the scapulae from the apices.",
+                "Part Position": "Allow 1 1/2 inches of IR above the shoulders. Ensure no rotation of thorax.",
+                "CR": "No angle. Center CR to T7 (at level of inferior angle of scapula).",
+                "Respiration": "Expose on second full inspiration.",
+                "Evaluation Criteria": {
+                    "Anatomy Demonstrated": "Entirety of both lungs from apices to costrophrenic angles. Trachea from T1 and lower. Hilum, heart, great vessels, and bony thorax.",
+                    "Position": "Chin elevated, arms out of way, scapulae out of lungs, no rotation, equal collimation on both lateral sides. T7 is centered and 10 posterior ribs visible above diaphragm.",
+                    "Exposure": "No motion and sufficient long-scale contrast for fine vascular markings."
+                }
+            },
+            {
+                "View": "OBL",
+                "Part": "Hand",
+                "Name": "OBL Hand",
+                "Clinical Indications": [
+                    "Pleural effusion",
+                    "Pneumothorax",
+                    "Atelectasis",
+                    "Signs of infection"
+                ],
+                "Technical Factors": {
+                    "SID": "72",
+                    "IR Size": "14x17",
+                    "IR Orientation": "Landscape or portrait, depending on patient habitus.",
+                    "Grid": true,
+                    "kVp Range": "110-125"
+                },
+                "Patient Position": "Patient erect, anterior chest touching IR, hands on hips and out of the way. Chin up, shoulders rotated forward to clear the scapulae from the apices.",
+                "Part Position": "Allow 1 1/2 inches of IR above the shoulders. Ensure no rotation of thorax.",
+                "CR": "No angle. Center CR to T7 (at level of inferior angle of scapula).",
+                "Respiration": "Expose on second full inspiration.",
+                "Evaluation Criteria": {
+                    "Anatomy Demonstrated": "Entirety of both lungs from apices to costrophrenic angles. Trachea from T1 and lower. Hilum, heart, great vessels, and bony thorax.",
+                    "Position": "Chin elevated, arms out of way, scapulae out of lungs, no rotation, equal collimation on both lateral sides. T7 is centered and 10 posterior ribs visible above diaphragm.",
+                    "Exposure": "No motion and sufficient long-scale contrast for fine vascular markings."
+                }
+            },
+            {
+                "View": "OBL",
+                "Part": "Hand",
+                "Name": "OBL Hand",
+                "Clinical Indications": [
+                    "Pleural effusion",
+                    "Pneumothorax",
+                    "Atelectasis",
+                    "Signs of infection"
+                ],
+                "Technical Factors": {
+                    "SID": "72",
+                    "IR Size": "14x17",
+                    "IR Orientation": "Landscape or portrait, depending on patient habitus.",
+                    "Grid": true,
+                    "kVp Range": "110-125"
+                },
+                "Patient Position": "Patient erect, anterior chest touching IR, hands on hips and out of the way. Chin up, shoulders rotated forward to clear the scapulae from the apices.",
+                "Part Position": "Allow 1 1/2 inches of IR above the shoulders. Ensure no rotation of thorax.",
+                "CR": "No angle. Center CR to T7 (at level of inferior angle of scapula).",
+                "Respiration": "Expose on second full inspiration.",
+                "Evaluation Criteria": {
+                    "Anatomy Demonstrated": "Entirety of both lungs from apices to costrophrenic angles. Trachea from T1 and lower. Hilum, heart, great vessels, and bony thorax.",
+                    "Position": "Chin elevated, arms out of way, scapulae out of lungs, no rotation, equal collimation on both lateral sides. T7 is centered and 10 posterior ribs visible above diaphragm.",
+                    "Exposure": "No motion and sufficient long-scale contrast for fine vascular markings."
+                }
+            },
+            {
+                "View": "OBL",
+                "Part": "Hand",
+                "Name": "OBL Hand",
+                "Clinical Indications": [
+                    "Pleural effusion",
+                    "Pneumothorax",
+                    "Atelectasis",
+                    "Signs of infection"
+                ],
+                "Technical Factors": {
+                    "SID": "72",
+                    "IR Size": "14x17",
+                    "IR Orientation": "Landscape or portrait, depending on patient habitus.",
+                    "Grid": true,
+                    "kVp Range": "110-125"
+                },
+                "Patient Position": "Patient erect, anterior chest touching IR, hands on hips and out of the way. Chin up, shoulders rotated forward to clear the scapulae from the apices.",
+                "Part Position": "Allow 1 1/2 inches of IR above the shoulders. Ensure no rotation of thorax.",
+                "CR": "No angle. Center CR to T7 (at level of inferior angle of scapula).",
+                "Respiration": "Expose on second full inspiration.",
+                "Evaluation Criteria": {
+                    "Anatomy Demonstrated": "Entirety of both lungs from apices to costrophrenic angles. Trachea from T1 and lower. Hilum, heart, great vessels, and bony thorax.",
+                    "Position": "Chin elevated, arms out of way, scapulae out of lungs, no rotation, equal collimation on both lateral sides. T7 is centered and 10 posterior ribs visible above diaphragm.",
+                    "Exposure": "No motion and sufficient long-scale contrast for fine vascular markings."
+                }
+            },
+            {
+                "View": "OBL",
+                "Part": "Hand",
+                "Name": "OBL Hand",
+                "Clinical Indications": [
+                    "Pleural effusion",
+                    "Pneumothorax",
+                    "Atelectasis",
+                    "Signs of infection"
+                ],
+                "Technical Factors": {
+                    "SID": "72",
+                    "IR Size": "14x17",
+                    "IR Orientation": "Landscape or portrait, depending on patient habitus.",
+                    "Grid": true,
+                    "kVp Range": "110-125"
+                },
+                "Patient Position": "Patient erect, anterior chest touching IR, hands on hips and out of the way. Chin up, shoulders rotated forward to clear the scapulae from the apices.",
+                "Part Position": "Allow 1 1/2 inches of IR above the shoulders. Ensure no rotation of thorax.",
+                "CR": "No angle. Center CR to T7 (at level of inferior angle of scapula).",
+                "Respiration": "Expose on second full inspiration.",
+                "Evaluation Criteria": {
+                    "Anatomy Demonstrated": "Entirety of both lungs from apices to costrophrenic angles. Trachea from T1 and lower. Hilum, heart, great vessels, and bony thorax.",
+                    "Position": "Chin elevated, arms out of way, scapulae out of lungs, no rotation, equal collimation on both lateral sides. T7 is centered and 10 posterior ribs visible above diaphragm.",
+                    "Exposure": "No motion and sufficient long-scale contrast for fine vascular markings."
+                }
+            },
+            {
+                "View": "OBL",
+                "Part": "Hand",
+                "Name": "OBL Hand",
                 "Clinical Indications": [
                     "Pleural effusion",
                     "Pneumothorax",

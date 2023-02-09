@@ -29,6 +29,7 @@ body {
     min-width: 20%;
     max-width: 20%;
     background-color: rgb(37, 37, 37);
+    overflow-y: scroll;
 }
 
 #nav-bar {
@@ -62,40 +63,44 @@ input {
 }
 
 .main_card {
-    border: 1px solid rgb(19, 19, 19);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: rgb(31, 31, 31);
     padding: .5rem;
-    min-height: 20px;
-    max-height: 50px;
+    min-height: 30px;
 }
 
 .main_card:hover {
-    background-color: rgb(44, 44, 44);
-    box-shadow: 0px 0px 10px 2px gray;
+    background-color: rgb(39, 39, 39);
+    box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
+    cursor: pointer;
 }
 
-.main_card>.main_card_views {
-    margin-top: .5rem;
-    font-size: .8rem;
-    color: #777
+.main_card_name {
+    font-size: 1.2rem;
 }
 
-.views_cards {
-    margin-bottom: .5rem;
+.main_card_views {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: .5rem;
+    width: 50%;
+    height: 100%;
 }
 
 .view_card {
-    margin-top: .25rem;
-    margin-left: 35%;
-    border: 1px solid rgb(19, 19, 19);
-    background-color: rgb(31, 31, 31);
-    padding: .2rem .3rem .2rem;
+    background-color: rgb(23, 23, 23);
+    padding: .3rem;
     font-size: .8rem;
+    color: #909090;
+    width: 25px;
+    text-align: center;
 }
 
 .view_card:hover {
     background-color: rgb(44, 44, 44);
-    box-shadow: 0px 0px 10px 2px gray;
+    box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
 }
 
 .hide {
@@ -106,7 +111,8 @@ input {
     margin: 3% 5%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    background-color: rgb(37, 37, 37);
 }
 
 #page_exam_name {
@@ -117,9 +123,13 @@ input {
     width: 40%;
 }
 
+#column_one,
+#column_two {
+    padding: 50px;
+}
+
 #page_img {
-    height: 400px;
-    width: auto;
+    width: 100%;
     margin-bottom: 25px;
 }
 
