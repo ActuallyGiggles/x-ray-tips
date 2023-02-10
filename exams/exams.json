@@ -2,7 +2,17 @@
     {
         "Part": "Chest",
         "Views": [
+            "AP",
             "PA",
+            "LAT",
+            "LORD",
+            "DECU"
+        ]
+    },
+    {
+        "Part": "Upper Airway",
+        "Views": [
+            "AP",
             "LAT"
         ]
     }

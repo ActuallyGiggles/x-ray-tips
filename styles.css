@@ -10,20 +10,26 @@ body {
     flex-flow: row;
 }
 
-#intro {
-    font-size: 15px;
-    margin-left: 25px;
-}
-
-#logo {
-    height: 150px;
-    opacity: .1;
+#intro_content {
     position: fixed;
-    left: 87%;
-    top: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    left: 20%;
+    bottom: 60%;
+    z-index: 0;
 }
 
-#left-bar {
+#intro_content>p {
+    height: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    text-align: center;
+}
+
+#left_bar {
     display: flex;
     flex-direction: row;
     min-width: 20%;
@@ -32,7 +38,7 @@ body {
     overflow-y: scroll;
 }
 
-#nav-bar {
+#nav_bar {
     width: 100%;
     margin: 20px;
 }
@@ -42,7 +48,7 @@ body {
     width: 1px;
 }
 
-.search-wrapper {
+.search_wrapper {
     display: flex;
     flex-direction: column;
     gap: .25rem;
@@ -53,7 +59,7 @@ input {
     font-size: 1rem;
 }
 
-.exam-cards-container {
+.exam_cards_container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     align-content: start;
@@ -74,7 +80,6 @@ input {
 .main_card:hover {
     background-color: rgb(39, 39, 39);
     box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
-    cursor: pointer;
 }
 
 .main_card_name {
@@ -90,12 +95,15 @@ input {
 }
 
 .view_card {
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
     background-color: rgb(23, 23, 23);
     padding: .3rem;
     font-size: .8rem;
-    color: #909090;
-    width: 25px;
-    text-align: center;
+    color: #b8b8b8;
+    cursor: pointer;
 }
 
 .view_card:hover {
@@ -113,19 +121,18 @@ input {
     flex-direction: row;
     justify-content: space-around;
     background-color: rgb(37, 37, 37);
+    z-index: 1;
 }
 
 #page_exam_name {
     margin-bottom: 25px;
 }
 
-#column_two {
-    width: 40%;
-}
 
 #column_one,
 #column_two {
-    padding: 50px;
+    width: 40%;
+    padding: 40px;
     overflow-y: scroll;
 }
 
@@ -134,7 +141,9 @@ input {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    height: 350px;
     margin-bottom: 25px;
+    object-fit: cover;
 }
 
 h1 {
@@ -143,8 +152,9 @@ h1 {
 }
 
 h2 {
+    text-decoration: underline;
     font-size: 1.2rem;
-    margin: 0px;
+    margin-bottom: -10px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -160,4 +170,25 @@ h2 {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+}
+
+#footer {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    left: 20%;
+    bottom: 0;
+}
+
+#footer>a {
+    height: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+}
+
+#footer>a>img {
+    height: 15px;
 }

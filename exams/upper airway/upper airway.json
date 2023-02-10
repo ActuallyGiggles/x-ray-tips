@@ -1,0 +1,79 @@
+[
+    {
+        "View": "LAT",
+        "Part": "Upper Airway",
+        "Name": "LAT Upper Airway",
+        "Clinical Indications": [
+            "Pathology of larynx and trachea",
+            "Thyroid and thymus glands",
+            "Foreign object or contrast medium",
+            "Epiglottitis"
+        ],
+        "Technical Factors": {
+            "SID": "72 inches",
+            "IR Size": "10x12",
+            "IR Orientation": "Portrait",
+            "Grid": true,
+            "kVp Range": "75-85"
+        },
+        "Patient Position": [
+            "Patient upright (preferred) with side touching IR",
+            "Roll shoulders back",
+            "Hands clasped behind back",
+            "Chin up"
+        ],
+        "Part Position": [
+            "Top of IR at EAM",
+            "No rotation"
+        ],
+        "CR": [
+            "Perpendicular",
+            "Center CR to C6-C7"
+        ],
+        "Respiration": [
+            "Expose on slow, deep inspiration"
+        ],
+        "Evaluation Criteria": {
+            "Anatomy Demonstrated": "Air-filled larynx and trachea.",
+            "Position": "Include EAM to T2-T3. If distal trachea is of concern, centering should be lower. Shoulders should not superimpose trachea.",
+            "Exposure": "No motion and air-filled larynx and upper trachea not overexposed."
+        }
+    },
+    {
+        "View": "AP",
+        "Part": "Upper Airway",
+        "Name": "AP Upper Airway",
+        "Clinical Indications": [
+            "Pathology of larynx and trachea",
+            "Thyroid and thymus glands",
+            "Foreign object or contrast medium"
+        ],
+        "Technical Factors": {
+            "SID": "40 inches",
+            "IR Size": "10x12",
+            "IR Orientation": "Portrait",
+            "Grid": true,
+            "kVp Range": "75-85"
+        },
+        "Patient Position": [
+            "Patient upright (preferred) with upper back touching IR",
+            "AML perpendicular to IR"
+        ],
+        "Part Position": [
+            "Top of IR at EAM",
+            "No rotation"
+        ],
+        "CR": [
+            "Perpendicular",
+            "Center CR to T1-T2"
+        ],
+        "Respiration": [
+            "Expose on slow, deep inspiration"
+        ],
+        "Evaluation Criteria": {
+            "Anatomy Demonstrated": "Air-filled larynx and trachea.",
+            "Position": "No rotation proven by symmetrical sternoclavicular joints. Superimposed mandible and base of skull. Skull aligned to center",
+            "Exposure": "No motion and air-filled larynx and upper trachea seen through vertebrae."
+        }
+    }
+]

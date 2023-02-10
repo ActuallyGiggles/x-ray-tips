@@ -27,7 +27,7 @@ function populateListFromObject(list, object) {
         if (Object.hasOwnProperty.call(object, key)) {
             const item = object[key];
             var li = document.createElement("li")
-            li.innerText = key + ": " + item
+            li.innerHTML = "<b>" + key + ":</b> " + item
             list.appendChild(li)
         }
     }
@@ -51,9 +51,9 @@ function getExams() {
                 const viewsElement = main_card.querySelector("[data-main-card-views]")
                 series["Views"].forEach(view => {
                     const node = document.createElement("div")
+                    node.classList.add("view_card")
                     const textnode = document.createTextNode(view)
                     node.appendChild(textnode)
-                    node.classList.add("view_card")
                     node.dataset.part = series["Part"]
                     node.dataset.view = view
                     viewsElement.appendChild(node)
@@ -73,8 +73,6 @@ function getExams() {
         });
     })
 }
-
-
 
 function generatePage() {
     document.addEventListener("click", function (event) {
@@ -120,7 +118,6 @@ function generatePage() {
 
             document.getElementById("column_one").classList.remove("hide")
             document.getElementById("column_two").classList.remove("hide")
-            document.getElementById("intro").classList.add("hide")
         }
     })
 }

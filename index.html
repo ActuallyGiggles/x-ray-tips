@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="./img/icon/Artboard 1.png">
+    <link rel="icon" type="image/x-icon" href="./img/Artboard 1.png">
     <title>X-Ray Tips</title>
 </head>
 
 <body>
-    <div id="left-bar">
-        <div id="nav-bar">
-            <div class="search-wrapper">
+    <div id="left_bar">
+        <div id="nav_bar">
+            <div class="search_wrapper">
                 <label for="search">Search Exams</label>
                 <input type="search" id="search" exam-search>
             </div>
-            <div class="exam-cards-container" data-exam-cards-container>
+            <div class="exam_cards_container" data-exam-cards-container>
                 <template data-exam-template>
                     <div class="exam_cards" data-exam-cards>
                         <div class="main_card" data-main-card>
@@ -29,15 +29,11 @@
                 </template>
             </div>
         </div>
-        <div id="separation"></div>
+
     </div>
 
-    <div id="intro">
-        <br><br>
-        <TT> <-- Search for an exam to review.</TT>
-                <br><br><br>
-                <TT> <-- Or choose one from the list here.</TT>
-                        <img id="logo" src="/img/icon/Artboard 1.png">
+    <div id="intro_content">
+        <p>Search for an exam at the upper left.<br>Or...<br>Pick an exam to review.</p>
     </div>
 
     <div id="page_content">
@@ -61,6 +57,11 @@
             <h2>Evaluation Criteria</h2>
             <ul id="evaluation_criteria"></ul>
         </div>
+    </div>
+
+    <div id="footer">
+        <p>Made with <span style='color:rgb(255, 0, 0)'>&#10084;</span> by Mark Klymenko</p>
+        <a href="https://github.com/ActuallyGiggles" target="_blank"><img id="gitImage" src="img/github.png"></a>
     </div>
 </body>
 
