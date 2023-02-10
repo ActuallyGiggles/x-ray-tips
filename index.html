@@ -7,13 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="./img/Artboard 1.png">
+    <link rel="icon" type="image/x-icon" href="./img/logo_transparent.png">
     <title>X-Ray Tips</title>
 </head>
 
 <body>
     <div id="left_bar">
-        <div id="nav_bar">
+        <div id="header">
+            <img src="./img/logo_transparent.png">
+            <div id="title">X-Ray Tips</div>
+        </div>
+        <div id="nav_buttons">
+            <a id="home" class="nav_button">Home</a>
+            <a id="about" class="nav_button">About</a>
+        </div>
+        <div id="exam_bar">
             <div class="search_wrapper">
                 <label for="search">Search Exams</label>
                 <input type="search" id="search" exam-search>
@@ -29,33 +37,32 @@
                 </template>
             </div>
         </div>
-
     </div>
 
-    <div id="intro_content">
-        <p>Search for an exam at the upper left.<br>Or...<br>Pick an exam to review.</p>
+    <div id="intro">
+        <div id="intro_content">Search for an exam at the upper left.<br>Or...<br>Pick an exam to review.</div>
     </div>
 
     <div id="page_content">
         <div id="column_one" class="hide">
             <h1 id="page_exam_name"></h1>
             <h2>Clinical Indications</h2>
-            <ul id="clinical_indications"></ul>
+            <ul id="clinical_indications" class="content"></ul>
             <h2>Technical Factors</h2>
-            <ul id="technical_factors"></ul>
+            <ul id="technical_factors" class="content"></ul>
             <h2>Patient Position</h2>
-            <ul id="patient_position"></ul>
+            <ul id="patient_position" class="content"></ul>
             <h2>Part Position</h2>
-            <ul id="part_position"></ul>
+            <ul id="part_position" class="content"></ul>
             <h2>CR</h2>
-            <ul id="cr"></ul>
+            <ul id="cr" class="content"></ul>
         </div>
         <div id="column_two" class="hide">
             <img id="page_img" src="">
             <h2>Respiration</h2>
-            <ul id="respiration"></ul>
+            <ul id="respiration" class="content"></ul>
             <h2>Evaluation Criteria</h2>
-            <ul id="evaluation_criteria"></ul>
+            <ul id="evaluation_criteria" class="content"></ul>
         </div>
     </div>
 

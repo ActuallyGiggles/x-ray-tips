@@ -27,7 +27,7 @@ function populateListFromObject(list, object) {
         if (Object.hasOwnProperty.call(object, key)) {
             const item = object[key];
             var li = document.createElement("li")
-            li.innerHTML = "<b>" + key + ":</b> " + item
+            li.innerHTML = `<span style="color:#b0b0b0">` + key + ":</span> " + item
             list.appendChild(li)
         }
     }
@@ -76,6 +76,17 @@ function getExams() {
 
 function generatePage() {
     document.addEventListener("click", function (event) {
+        if (event.target.className == "nav_button") {
+            if (event.target.id == "home") {
+                document.getElementById("intro_content").innerHTML = "Search for an exam at the upper left.<br>Or...<br>Pick an exam to review."
+            } else if (event.target.id == "about") {
+                document.getElementById("intro_content").innerHTML = `Hi! My name is Mark!<br><br>I created this website as an x-ray student for x-ray students.<br>This is meant to be used if you quickly need to brush up on some exam you haven't done in a while.<br><br>Feel free to tell me what you think so far by emailing me at <span style="text-decoration: underline;">mklymenko007@gmail.com</span>.<br><br>Have a radioactive day!`
+            }
+
+            document.getElementById("column_one").classList.add("hide")
+            document.getElementById("column_two").classList.add("hide")
+        }
+
         if (event.target.className == "view_card") {
             var part = event.target.dataset.part.toLowerCase()
             var view = event.target.dataset.view
