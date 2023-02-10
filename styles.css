@@ -147,7 +147,7 @@ input {
 .nav_button,
 .view_card {
     background-color: rgb(26, 26, 26);
-    color: #b8b8b8;
+    color: #e6e6e6;
     cursor: pointer;
     display: flex;
     flex-direction: row;
