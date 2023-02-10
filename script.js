@@ -96,8 +96,10 @@ function generatePage() {
 
             if (document.getElementById("gitImage").src.includes("light.png")) {
                 document.getElementById("gitImage").src = "img/github_dark.png"
+                document.getElementById("theme").innerText = "Dark Theme"
             } else if (document.getElementById("gitImage").src.includes("dark.png")) {
                 document.getElementById("gitImage").src = "img/github_light.png"
+                document.getElementById("theme").innerText = "Light Theme"
             }
 
             var array = document.getElementsByClassName("nav_button")
