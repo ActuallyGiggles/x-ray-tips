@@ -1,0 +1,83 @@
+[
+    {
+        "View": "PA",
+        "Part": "Chest",
+        "Name": "PA Chest",
+        "Clinical Indications": [
+            "Pleural effusion",
+            "Pneumothorax",
+            "Atelectasis",
+            "Signs of infection"
+        ],
+        "Technical Factors": {
+            "SID": "72",
+            "IR Size": "14x17",
+            "IR Orientation": "Depends on patient habitus.",
+            "Grid": true,
+            "kVp Range": "110-125"
+        },
+        "Patient Position": [
+            "Patient standing",
+            "Anterior chest touching IR",
+            "Hands on hips and out of the way",
+            "Chin up",
+            "Shoulders rotated forward"
+        ],
+        "Part Position": [
+            "1 1/2 inches of IR above shoulders",
+            "No rotation"
+        ],
+        "CR": [
+            "Perpendicular",
+            "Center CR to T7 (at level of inferior angle of scapula)"
+        ],
+        "Respiration": [
+            "Expose on second full inspiration"
+        ],
+        "Evaluation Criteria": {
+            "Anatomy Demonstrated": "Entirety of both lungs from apices to costrophrenic angles. Trachea from T1 and lower. Hilum, heart, great vessels, and bony thorax.",
+            "Position": "Chin elevated, arms out of way, scapulae out of lungs, no rotation, equal collimation on both lateral sides. T7 is centered and 10 posterior ribs visible above diaphragm.",
+            "Exposure": "No motion and sufficient long-scale contrast for fine vascular markings."
+        }
+    },
+    {
+        "View": "LAT",
+        "Part": "Chest",
+        "Name": "LAT Chest",
+        "Clinical Indications": [
+            "Pathology posterior to the heart",
+            "Great vessels",
+            "Sternum"
+        ],
+        "Technical Factors": {
+            "SID": "72",
+            "IR Size": "14x17",
+            "IR Orientation": "Portrait.",
+            "Grid": true,
+            "kVp Range": "110-125"
+        },
+        "Patient Position": [
+            "Patient erect",
+            "Left side of chest touching IR",
+            "Arms raised above head",
+            "Chin up"
+        ],
+        "Part Position": [
+            "Positioned in a true lateral",
+            "Coronal plane in center of IR",
+            "Ensure no rotation of thorax"
+        ],
+        "CR": [
+            "No angle",
+            "Center CR to T7 (at level of inferior angle of scapula)"
+        ],
+        "Respiration": [
+            "Expose on second full inspiration."
+        ],
+        "Evaluation Criteria": {
+            "Anatomy Demonstrated": "Entirety of both lungs from apices to costrophrenic angles. Anterior sternum to posterior ribs.",
+            "Position": "Chin elevated, arms out of way, no rotation, equal collimation on both anterior and posterior sides. T7 is centered.",
+            "Exposure": "No motion and sufficient long-scale contrast for visualization of rib outlines and lung markings through the heart shadow and upper lung areas."
+        }
+    }
+]
