@@ -174,7 +174,7 @@ input {
 #column_one,
 #column_two {
     width: 40%;
-    padding: 40px;
+    padding: 50px;
     overflow-y: scroll;
 }
 

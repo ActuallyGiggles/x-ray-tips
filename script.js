@@ -91,6 +91,9 @@ function generatePage() {
             var part = event.target.dataset.part.toLowerCase()
             var view = event.target.dataset.view
 
+            document.getElementById("column_one").classList.add("hide")
+            document.getElementById("column_two").classList.add("hide")
+
             fetch("./exams/" + part + "/" + part + ".json")
                 .then((res) => res.json())
                 .then((data) => {
