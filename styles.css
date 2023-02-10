@@ -10,6 +10,11 @@ body {
     flex-flow: row;
 }
 
+.body_light_mode {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(22, 22, 22);
+}
+
 #intro {
     position: fixed;
     width: 80%;
@@ -39,6 +44,10 @@ body {
     overflow-y: scroll;
 }
 
+.left_bar_light_mode {
+    background-color: #cecece !important;
+}
+
 #header {
     display: flex;
     flex-direction: row;
@@ -63,16 +72,10 @@ body {
 }
 
 .nav_button {
-    background-color: rgb(26, 26, 26);
     height: 10px;
     line-height: 10px;
-    text-align: center;
     padding: 1rem;
     font-size: 1rem;
-    color: #b8b8b8;
-    cursor: pointer;
-    text-decoration: none;
-    margin: auto;
 }
 
 .nav_button:hover {
@@ -119,6 +122,11 @@ input {
     min-height: 30px;
 }
 
+.main_card_light_mode {
+    background-color: rgb(233, 233, 233) !important;
+    color: rgb(22, 22, 22) !important;
+}
+
 .main_card:hover {
     background-color: rgb(39, 39, 39);
     box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
@@ -136,21 +144,35 @@ input {
     height: 100%;
 }
 
+.nav_button,
 .view_card {
-    height: 40px;
-    line-height: 40px;
-    width: 40px;
-    text-align: center;
     background-color: rgb(26, 26, 26);
-    padding: .3rem;
-    font-size: .8rem;
     color: #b8b8b8;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button_card_light_mode {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(68, 68, 68) !important;
+}
+
+.view_card {
+    width: 45px;
+    height: 25px;
 }
 
 .view_card:hover {
     background-color: rgb(44, 44, 44);
     box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
+}
+
+.view_card_label {
+    font-size: .8rem;
+    text-align: center;
+    margin: auto;
 }
 
 .hide {
@@ -166,10 +188,14 @@ input {
     z-index: 1;
 }
 
+.page_content_light_mode {
+    background-color: #f1f1f1 !important;
+    color: rgb(68, 68, 68) !important;
+}
+
 #page_exam_name {
     margin-bottom: 25px;
 }
-
 
 #column_one,
 #column_two {
