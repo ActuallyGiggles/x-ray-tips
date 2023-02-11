@@ -180,7 +180,7 @@ input {
 }
 
 .view_card {
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(18, 18, 18);
     color: #e6e6e6;
     cursor: pointer;
 }
@@ -210,7 +210,7 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(37, 37, 37);
+    background-color: inherit;
     z-index: 1;
 }
 
