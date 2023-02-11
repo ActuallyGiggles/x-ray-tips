@@ -71,11 +71,28 @@ body {
     margin-bottom: 10px;
 }
 
+
 .nav_button {
-    height: 10px;
-    line-height: 10px;
+    height: auto;
+    line-height: auto;
     padding: 1rem;
     font-size: 1rem;
+    background-color: rgb(26, 26, 26);
+    border: 1px solid rgb(106, 106, 106);
+    color: #e6e6e6;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.no_copy_text {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .nav_button:hover {
@@ -105,12 +122,17 @@ input {
 }
 
 .exam_cards_container {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     align-content: start;
     gap: .25rem;
-    margin-top: 1rem;
     width: 100%;
+}
+
+.exam_cards {
+    display: flex;
+    flex-direction: column;
 }
 
 .main_card {
@@ -118,6 +140,7 @@ input {
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(31, 31, 31);
+    border: 1px solid rgb(106, 106, 106);
     padding: .5rem;
     min-height: 30px;
 }
@@ -130,38 +153,36 @@ input {
 .main_card:hover {
     background-color: rgb(39, 39, 39);
     box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
+    cursor: pointer;
 }
 
-.main_card_name {
+.main_card_label {
     font-size: 1.2rem;
 }
 
-.main_card_views {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-    gap: .5rem;
-    width: 50%;
-    height: 100%;
+.drop_down_arrows {
+    width: 10%;
 }
 
-.nav_button,
+.view_cards_container {
+    background-color: rgb(106, 106, 106);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    gap: 1px;
+    padding: 1px;
+    width: 7%;
+}
+
+.view_cards_container_light_mode {
+    background-color: rgb(49, 49, 49);
+}
+
 .view_card {
     background-color: rgb(26, 26, 26);
     color: #e6e6e6;
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.button_card_light_mode {
-    background-color: rgb(255, 255, 255) !important;
-    color: rgb(68, 68, 68) !important;
-}
-
-.view_card {
-    width: 45px;
-    height: 25px;
 }
 
 .view_card:hover {
@@ -170,9 +191,13 @@ input {
 }
 
 .view_card_label {
-    font-size: .8rem;
-    text-align: center;
-    margin: auto;
+    text-align: left;
+    margin: 3px 10px 3px;
+}
+
+.button_card_light_mode {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(68, 68, 68) !important;
 }
 
 .hide {
@@ -181,6 +206,7 @@ input {
 
 #page_content {
     margin: 3% 5%;
+    gap: 1px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -189,7 +215,7 @@ input {
 }
 
 .page_content_light_mode {
-    background-color: #f1f1f1 !important;
+    background-color: #ffffff !important;
     color: rgb(68, 68, 68) !important;
 }
 
@@ -199,7 +225,7 @@ input {
 
 #column_one,
 #column_two {
-    width: 40%;
+    width: 45%;
     padding: 50px;
     overflow-y: scroll;
 }

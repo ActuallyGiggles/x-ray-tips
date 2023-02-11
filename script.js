@@ -45,25 +45,27 @@ function getExams() {
 
                 const main_card = exam_cards.querySelector("[data-main-card]")
                 main_card.id = series["Part"]
-                const seriesElement = main_card.querySelector("[data-main-card-name]")
+                const seriesElement = main_card.querySelector("[data-main-card-label]")
                 seriesElement.textContent = series["Part"]
 
-                const viewsElement = main_card.querySelector("[data-main-card-views]")
+                const viewCardContainer = exam_cards.querySelector("[data-view-cards-container]")
+                viewCardContainer.classList.add("hide")
                 series["Views"].forEach(view => {
-                    const div = document.createElement("div")
-                    div.classList.add("view_card")
+                    const viewCard = document.createElement("option")
+                    viewCard.classList.add("view_card")
                     const textDiv = document.createElement("div")
                     textDiv.classList.add("view_card_label")
                     textDiv.dataset.part = series["Part"]
                     textDiv.dataset.view = view
                     const textnode = document.createTextNode(view)
                     textDiv.appendChild(textnode)
-                    div.appendChild(textDiv)
-                    div.dataset.part = series["Part"]
-                    div.dataset.view = view
-                    viewsElement.appendChild(div)
+                    viewCard.appendChild(textDiv)
+                    viewCard.dataset.part = series["Part"]
+                    viewCard.dataset.view = view
+                    viewCardContainer.appendChild(viewCard)
                 });
 
+                exam_cards.appendChild(viewCardContainer)
                 exam_cards.appendChild(main_card)
                 examCardsContainer.append(exam_cards)
                 return { part: series["Part"], element: exam_cards }
@@ -75,12 +77,13 @@ function getExams() {
         exams.forEach(exam => {
             const isVisible = exam.part.toLowerCase().includes(value)
             exam.element.classList.toggle("hide", !isVisible)
-        });
+        })
     })
 }
 
 function generatePage() {
     document.addEventListener("click", function (event) {
+        // Nav buttons
         if (event.target.id == "home") {
             document.getElementById("intro_content").innerHTML = "Search for an exam at the upper left.<br>Or...<br>Pick an exam to review."
             document.getElementById("column_one").classList.add("hide")
@@ -90,28 +93,54 @@ function generatePage() {
             document.getElementById("column_one").classList.add("hide")
             document.getElementById("column_two").classList.add("hide")
         } else if (event.target.id == "theme") {
+            // Change light/dark mode
+
+            // Change body
             document.body.classList.toggle("body_light_mode")
+            // Change left bar
             document.getElementById("left_bar").classList.toggle("left_bar_light_mode")
+            // Change page content
             document.getElementById("page_content").classList.toggle("page_content_light_mode")
 
+            // Change Github logo and mode button text
             if (document.getElementById("gitImage").src.includes("light.png")) {
                 document.getElementById("gitImage").src = "img/github_dark.png"
-                document.getElementById("theme").innerText = "Dark Theme"
+                document.getElementById("theme").innerText = "Dark Mode"
             } else if (document.getElementById("gitImage").src.includes("dark.png")) {
                 document.getElementById("gitImage").src = "img/github_light.png"
-                document.getElementById("theme").innerText = "Light Theme"
+                document.getElementById("theme").innerText = "Light Mode"
             }
 
+            // Change drop down arrows
+            var array = document.getElementsByClassName("drop_down_arrows")
+            for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+                if (element.src.includes("dark.png")) {
+                    element.src = "img/dropdownarrowslight.png"
+                } else if (element.src.includes("light.png")) {
+                    element.src = "img/dropdownarrowsdark.png"
+                }
+            }
+
+            // Change nav buttons
             var array = document.getElementsByClassName("nav_button")
             for (let index = 0; index < array.length; index++) {
                 const element = array[index];
                 element.classList.toggle("button_card_light_mode")
             }
+            // Change view cards container
+            var array = document.getElementsByClassName("view_cards_container")
+            for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+                element.classList.toggle("view_cards_container_light_mode")
+            }
+            // Change view cards
             var array = document.getElementsByClassName("view_card")
             for (let index = 0; index < array.length; index++) {
                 const element = array[index];
                 element.classList.toggle("button_card_light_mode")
             }
+            // Change main cards
             var array = document.getElementsByClassName("main_card")
             for (let index = 0; index < array.length; index++) {
                 const element = array[index];
@@ -119,6 +148,25 @@ function generatePage() {
             }
         }
 
+        // Get dropdown for each part
+        for (let index = 0; index < event.target.className.split(" ").length; index++) {
+            const className = event.target.className.split(" ")[index];
+
+            var view_cards_container
+            if (className == "main_card") {
+                view_cards_container = event.target.parentElement.children[0]
+            } else if (className == "main_card_label") {
+                view_cards_container = event.target.parentElement.parentElement.children[0]
+            }
+            exams.forEach(exam => {
+                exam.element.children[0].classList.add("hide")
+            })
+            if (view_cards_container != null) {
+                view_cards_container.classList.toggle("hide")
+            }
+        }
+
+        // Populate the page for each view
         for (let index = 0; index < event.target.className.split(" ").length; index++) {
             const className = event.target.className.split(" ")[index];
             if (className == "view_card" || className == "view_card_label") {

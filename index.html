@@ -15,12 +15,12 @@
     <div id="left_bar">
         <div id="header">
             <img src="./img/logo_transparent.png">
-            <div id="title">X-Ray Tips</div>
+            <div id="title" class="no_copy_text">X-Ray Tips</div>
         </div>
         <div id="nav_buttons">
-            <div id="home" class="nav_button">Home</div>
-            <div id="theme" class="nav_button">Light Mode</div>
-            <div id="about" class="nav_button">About</div>
+            <div id="home" class="nav_button no_copy_text">Home</div>
+            <div id="theme" class="nav_button no_copy_text">Light Mode</div>
+            <div id="about" class="nav_button no_copy_text">About</div>
         </div>
         <div id="exam_bar">
             <div class="search_wrapper">
@@ -31,8 +31,10 @@
                 <template data-exam-template>
                     <div class="exam_cards" data-exam-cards>
                         <div class="main_card" data-main-card>
-                            <div class="main_card_name" data-main-card-name></div>
-                            <div class="main_card_views" data-main-card-views></div>
+                            <div class="main_card_label no_copy_text" data-main-card-label></div>
+                            <img class="drop_down_arrows" src="./img/dropdownarrowslight.png">
+                        </div>
+                        <div class="view_cards_container" data-view-cards-container>
                         </div>
                     </div>
                 </template>
