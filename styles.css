@@ -1,18 +1,38 @@
+:root {
+    --dark-lvl-1: #050505;
+    --dark-lvl-2: #222222;
+    --dark-lvl-3: #383838;
+    --dark-text: #cfcfcf;
+    --dark-text-highlight: #f7f7f7;
+    --dark-blue: #64a2ff;
+    --dark-gold: #9A7D31;
+    --dark-gold-hover: #c6a34b;
+
+    --light-lvl-1: #f7f7f7;
+    --light-lvl-2: #dbdbdb;
+    --light-lvl-3: #a8a8a8;
+    --light-text: #484848;
+    --light-text-highlight: #050505;
+    --light-blue: #64a2ff;
+    --light-gold: #9A7D31;
+    --light-gold-hover: #c6a34b;
+}
+
 html,
 body {
     height: 100%;
     width: 100%;
     margin: 0px;
-    background-color: rgb(22, 22, 22);
-    color: white;
+    background-color: var(--dark-lvl-1);
+    color: var(--dark-text);
     font-family: 'Montserrat', 'Segoe UI', sans-serif;
     display: flex;
     flex-flow: row;
 }
 
 .body_light_mode {
-    background-color: rgb(255, 255, 255) !important;
-    color: rgb(22, 22, 22);
+    background-color: var(--light-lvl-1);
+    color: var(--light-text-highlight);
 }
 
 #intro {
@@ -40,12 +60,13 @@ body {
     flex-direction: column;
     min-width: 20%;
     max-width: 20%;
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-lvl-2);
     overflow-y: scroll;
+    border-right: 1px solid var(--dark-gold);
 }
 
 .left_bar_light_mode {
-    background-color: #cecece !important;
+    background-color: var(--light-lvl-2) !important;
 }
 
 #header {
@@ -62,6 +83,7 @@ body {
 
 #title {
     font-size: 2rem;
+    color: var(--dark-gold);
 }
 
 #nav_buttons {
@@ -71,19 +93,26 @@ body {
     margin-bottom: 10px;
 }
 
-
 .nav_button {
     height: auto;
     line-height: auto;
     padding: 1rem;
     font-size: 1rem;
-    background-color: rgb(26, 26, 26);
-    border: 1px solid rgb(106, 106, 106);
-    color: #e6e6e6;
+    background-color: var(--dark-gold);
+    color: var(--dark-txt);
     cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.nav_button_light_mode {
+    background-color: var(--light-lvl-1);
+}
+
+.nav_button:hover {
+    background-color: var(--dark-gold-hover);
+    box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
 }
 
 .no_copy_text {
@@ -93,11 +122,6 @@ body {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-}
-
-.nav_button:hover {
-    background-color: rgb(39, 39, 39);
-    box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
 }
 
 #exam_bar {
@@ -139,21 +163,23 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(31, 31, 31);
-    border: 1px solid rgb(106, 106, 106);
+    background-color: var(--dark-gold);
     padding: .5rem;
-    min-height: 30px;
-}
-
-.main_card_light_mode {
-    background-color: rgb(233, 233, 233) !important;
-    color: rgb(22, 22, 22) !important;
+    height: 30px;
 }
 
 .main_card:hover {
-    background-color: rgb(39, 39, 39);
+    background-color: var(--dark-gold-hover);
     box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
     cursor: pointer;
+}
+
+.main_card_light_mode {
+    background-color: var(--light-lvl-1) !important;
+}
+
+.main_card_light_mode:hover {
+    background-color: var(--light-gold-hover) !important;
 }
 
 .main_card_label {
@@ -162,6 +188,16 @@ input {
 
 .drop_down_arrows {
     width: 10%;
+}
+
+.fa-arrow-down {
+    transform: rotate(0deg);
+    transition: transform .2s ease;
+}
+
+.fa-arrow-down.open {
+    transform: rotate(180deg);
+    transition: transform .2s ease;
 }
 
 .view_cards_container {
@@ -173,31 +209,31 @@ input {
     gap: 1px;
     padding: 1px;
     width: 7%;
+    transform: translate(1px, 46px);
+    z-index: 1;
 }
 
 .view_cards_container_light_mode {
-    background-color: rgb(49, 49, 49);
+    background-color: var(--light-gold);
 }
 
 .view_card {
-    background-color: rgb(18, 18, 18);
-    color: #e6e6e6;
+    background-color: var(--dark-lvl-3);
     cursor: pointer;
 }
 
+.view_card_light_mode {
+    background-color: var(--light-lvl-1);
+}
+
 .view_card:hover {
-    background-color: rgb(44, 44, 44);
+    background-color: var(--dark-lvl-4);
     box-shadow: 0px 0px 10px 2px rgb(79, 79, 79);
 }
 
 .view_card_label {
     text-align: left;
     margin: 3px 10px 3px;
-}
-
-.button_card_light_mode {
-    background-color: rgb(255, 255, 255) !important;
-    color: rgb(68, 68, 68) !important;
 }
 
 .hide {
@@ -215,8 +251,8 @@ input {
 }
 
 .page_content_light_mode {
-    background-color: #ffffff !important;
-    color: rgb(68, 68, 68) !important;
+    background-color: var(--light-lvl-1) !important;
+    color: var(--light-text) !important;
 }
 
 #page_exam_name {
@@ -238,21 +274,38 @@ input {
     height: 350px;
     margin-bottom: 25px;
     object-fit: cover;
+    border: 1px solid var(--dark-gold);
 }
 
 h1 {
     font-size: 3em;
     margin: 0px;
+    color: var(--dark-gold);
+    cursor: default;
 }
 
 h2 {
-    text-decoration: underline;
     font-size: 1.2rem;
     margin-bottom: -10px;
+    color: var(--dark-gold);
+    cursor: default;
+}
+
+h1:hover,
+h2:hover {
+    color: var(--dark-gold-hover);
 }
 
 ul {
     list-style-position: inside;
+}
+
+.content_key {
+    color: var(--dark-text-highlight);
+}
+
+.content_key_light_mode {
+    color: var(--light-text-highlight) !important;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

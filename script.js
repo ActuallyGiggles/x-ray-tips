@@ -12,6 +12,10 @@ const page_cr = document.getElementById("cr")
 const page_respiration = document.getElementById("respiration")
 const page_evaluation_criteria = document.getElementById("evaluation_criteria")
 
+var isDarkTheme = true
+var currentPart
+var currentView
+
 function populateListFromArray(list, array) {
     list.innerHTML = ""
     array.forEach(item => {
@@ -27,7 +31,11 @@ function populateListFromObject(list, object) {
         if (Object.hasOwnProperty.call(object, key)) {
             const item = object[key];
             var li = document.createElement("li")
-            li.innerHTML = `<span style="color:#b0b0b0">` + key + ":</span> " + item
+            if (isDarkTheme) {
+                li.innerHTML = `<span class="content_key">` + key + ":</span> " + item
+            } else {
+                li.innerHTML = `<span class="content_key_light_mode">` + key + ":</span> " + item
+            }
             list.appendChild(li)
         }
     }
@@ -94,6 +102,10 @@ function generatePage() {
             document.getElementById("column_two").classList.add("hide")
         } else if (event.target.id == "theme") {
             // Change light/dark mode
+            isDarkTheme = !isDarkTheme
+            if (currentPart != null) {
+                populatePageContent(currentPart, currentView)
+            }
 
             // Change body
             document.body.classList.toggle("body_light_mode")
@@ -121,12 +133,11 @@ function generatePage() {
                     element.src = "img/dropdownarrowsdark.png"
                 }
             }
-
             // Change nav buttons
             var array = document.getElementsByClassName("nav_button")
             for (let index = 0; index < array.length; index++) {
                 const element = array[index];
-                element.classList.toggle("button_card_light_mode")
+                element.classList.toggle("nav_button_light_mode")
             }
             // Change view cards container
             var array = document.getElementsByClassName("view_cards_container")
@@ -138,13 +149,19 @@ function generatePage() {
             var array = document.getElementsByClassName("view_card")
             for (let index = 0; index < array.length; index++) {
                 const element = array[index];
-                element.classList.toggle("button_card_light_mode")
+                element.classList.toggle("view_card_light_mode")
             }
             // Change main cards
             var array = document.getElementsByClassName("main_card")
             for (let index = 0; index < array.length; index++) {
                 const element = array[index];
                 element.classList.toggle("main_card_light_mode")
+            }
+            // Change content keys
+            var array = document.getElementsByClassName("content_key")
+            for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+                element.classList.toggle("content_key_light_mode")
             }
         }
 
@@ -155,68 +172,76 @@ function generatePage() {
             var view_cards_container
             if (className == "main_card") {
                 view_cards_container = event.target.parentElement.children[0]
-            } else if (className == "main_card_label") {
+            } else if (className == "main_card_label" || className == "drop_down_arrows") {
                 view_cards_container = event.target.parentElement.parentElement.children[0]
             }
+
+            // Hide all containers
             exams.forEach(exam => {
                 exam.element.children[0].classList.add("hide")
+                exam.element.children[1].children[1].className = 'drop_down_arrows fa-arrow-down';
             })
+            // If a card is picked
             if (view_cards_container != null) {
+                // Show the card's container
                 view_cards_container.classList.toggle("hide")
+                view_cards_container.parentElement.children[1].children[1].className = 'drop_down_arrows fa-arrow-down open';
             }
-        }
 
-        // Populate the page for each view
-        for (let index = 0; index < event.target.className.split(" ").length; index++) {
-            const className = event.target.className.split(" ")[index];
-            if (className == "view_card" || className == "view_card_label") {
-                var part = event.target.dataset.part.toLowerCase()
-                var view = event.target.dataset.view
-
-                document.getElementById("column_one").classList.add("hide")
-                document.getElementById("column_two").classList.add("hide")
-
-                fetch("./exams/" + part + "/" + part + ".json")
-                    .then((res) => res.json())
-                    .then((data) => {
-                        data.forEach(exam => {
-                            // View stays uppercase, as opposed to part
-                            if (exam["View"] == view) {
-                                // Exam Name
-                                page_name.innerHTML = exam["Name"]
-
-                                // Exam Image
-                                page_img.src = "./exams/" + part + "/" + exam["View"] + ".jpg"
-
-                                // Clinical Indications
-                                populateListFromArray(page_clinical_indications, exam["Clinical Indications"])
-
-                                // Technical Factors
-                                populateListFromObject(page_technical_factors, exam["Technical Factors"])
-
-                                // Patient Position
-                                populateListFromArray(page_patient_position, exam["Patient Position"])
-
-                                // Part Position
-                                populateListFromArray(page_part_position, exam["Part Position"])
-
-                                // CR
-                                populateListFromArray(page_cr, exam["CR"])
-
-                                // Respiration
-                                populateListFromArray(page_respiration, exam["Respiration"])
-
-                                // Evaluation Criteria
-                                populateListFromObject(page_evaluation_criteria, exam["Evaluation Criteria"])
-                            }
-                        })
-                    })
-
-                document.getElementById("column_one").classList.remove("hide")
-                document.getElementById("column_two").classList.remove("hide")
+            for (let index = 0; index < event.target.className.split(" ").length; index++) {
+                const className = event.target.className.split(" ")[index];
+                if (className == "view_card" || className == "view_card_label") {
+                    currentPart = event.target.dataset.part.toLowerCase()
+                    currentView = event.target.dataset.view
+                    populatePageContent(currentPart, currentView)
+                }
             }
         }
     })
+}
+
+function populatePageContent(part, view) {
+    document.getElementById("column_one").classList.add("hide")
+    document.getElementById("column_two").classList.add("hide")
+
+    fetch("./exams/" + part + "/" + part + ".json")
+        .then((res) => res.json())
+        .then((data) => {
+            data.forEach(exam => {
+                // View stays uppercase, as opposed to part
+                if (exam["View"] == view) {
+                    // Exam Name
+                    page_name.innerHTML = exam["Name"]
+
+                    // Exam Image
+                    page_img.src = "./exams/" + part + "/" + exam["View"] + ".jpg"
+
+                    // Clinical Indications
+                    populateListFromArray(page_clinical_indications, exam["Clinical Indications"])
+
+                    // Technical Factors
+                    populateListFromObject(page_technical_factors, exam["Technical Factors"])
+
+                    // Patient Position
+                    populateListFromArray(page_patient_position, exam["Patient Position"])
+
+                    // Part Position
+                    populateListFromArray(page_part_position, exam["Part Position"])
+
+                    // CR
+                    populateListFromArray(page_cr, exam["CR"])
+
+                    // Respiration
+                    populateListFromArray(page_respiration, exam["Respiration"])
+
+                    // Evaluation Criteria
+                    populateListFromObject(page_evaluation_criteria, exam["Evaluation Criteria"])
+                }
+            })
+        })
+
+    document.getElementById("column_one").classList.remove("hide")
+    document.getElementById("column_two").classList.remove("hide")
 }
 
 getExams()
